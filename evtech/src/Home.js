@@ -94,7 +94,7 @@ const navbarFunc = ()=>{
                 </div>
             </section>
             <section className="about">
-                <h1 className=' text-[6rem] w-[138rem] m-auto leading-[7.2rem] font-[600] text-[#222222]'>we strive to help businesses differentiate themselves from the competition by delivering visually stunning and unique designs that capture the essence of their brand."</h1>
+                <h1 className=' text-[6rem] w-[138rem] m-auto leading-[7.2rem] font-[600] text-[#222222]'>We strive to help businesses differentiate themselves from the competition by delivering visually stunning and unique designs that capture the essence of their brand."</h1>
                 <div className='flex mt-[10.8rem] justify-center items-center'>
                     <img src={About} alt="" className='w-[37.3rem] h-[45.6rem]' />
                     <div className='w-[68.1rem] text-left ml-[15.7rem]'>
