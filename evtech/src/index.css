@@ -8,13 +8,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Inter', sans-serif;
 }
-
+.Portfolio2{
+  display: none ;
+}
+.Portfolio1{
+display: flex;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 html{
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 body{
   background: #e8e8e8;
@@ -266,12 +272,17 @@ height: 7rem;
 }
 
 @media screen and (max-width : 768px) {
-
+  .Portfolio2{
+    display: flex ;
+  }
+  .Portfolio1{
+  display: none;
+  }
 .header1{
   display: none !important;
 }
 .header2{
-  display: flex;
+  display: flex !important;
   position: relative;
 }
 .navbarMb{

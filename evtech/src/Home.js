@@ -13,6 +13,7 @@ import logo from './img/logo.png'
 import emailjs from '@emailjs/browser';
 
 const Home = () => {
+    const [msgReceived, setmsgReceived] = useState(false)
     const [name, setname] = useState("")
     const [email, setemail] = useState("")
     const [msg, setmsg] = useState("")
@@ -25,11 +26,11 @@ const Home = () => {
         })
             .then(function (response) {
                 console.log(response);
+                setmsgReceived(true)
             })
             .catch(function (error) {
                 console.log(error);
             });
-        console.log(name, email, msg)
 
     }
     // const [windowWidth, setwindowWidth] = useState(window.innerWidth)
@@ -45,13 +46,13 @@ const navbarFunc = ()=>{
 
        <header className='header1 w-[164rem] m-auto flex justify-between pt-[2rem]'>
                 <img src={logo} alt="" className='w-[13.4rem] h-[9.5rem]'/>
-                <nav className='flex pt-[5.2rem] justify-center items-center'>
-                    <a href="" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem]'>Home</a>
-                    <a href="" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem]'>About</a>
-                    <a href="" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem]'>Services</a>
-                    <a href="" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem]'>Portfolio</a>
-                    <a href="" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem]'>Contact</a>
-                    <button class="button2">Contact</button>
+                <nav className='flex justify-center items-center'>
+                    <a href="#home" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem]'>Home</a>
+                    <a href="#about" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem]'>About</a>
+                    <a href="#services" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem]'>Services</a>
+                    <a href="#portfolio" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem]'>Portfolio</a>
+                    
+                    <button class="button2" onClick={()=>window.location.href="#contact"}>Contact</button>
                 </nav>
             </header> 
             <header className='header2 w-[100%] m-auto flex justify-between pt-[2rem] flex-col pl-[2rem]' >
@@ -68,44 +69,46 @@ const navbarFunc = ()=>{
 
                     <img src={logo} alt="" className='w-[13.4rem] h-[9.5rem]' />
                     <nav className='flex pt-[5.2rem] justify-center  flex-col items-start'>
-                        <a href="" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem] mb-[2rem]'>Home</a>
-                        <a href="" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem] mb-[2rem]'>About</a>
-                        <a href="" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem] mb-[2rem]'>Services</a>
-                        <a href="" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem] mb-[2rem]'>Portfolio</a>
-                        <a href="" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem] mb-[2rem]'>Contact</a>
-                        <button class="button2">Contact</button>
+                        <a href="/#home" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem] mb-[2rem]'>Home</a>
+                        <a href="#about" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem] mb-[2rem]'>About</a>
+                        <a href="#services" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem] mb-[2rem]'>Services</a>
+                        <a href="#portfolio" className='text-[1.8rem] text-[#000000A6] mr-[6.7rem] mb-[2rem]'>Portfolio</a>
+                       
+                        <button class="button2" onClick={()=>window.location.href="#contact"}>Contact</button>
                     </nav>
                 </div>
                 
 
             </header>
 
-            <section className="home mt-[21.4rem] h-[100vh]">
+            <section className="home mt-[21.4rem] h-[100vh]" id='home'>
                 <div className='flex w-[166.5rem] m-auto'>
                     <div className='w-[95.5rem] mr-[2.8rem]'>
                         <h1 className='text-left text-[7rem] leading-[8.1rem] font-[700] text-[#222222]'>Transform Your Brand with Stunning Designs: Social Media Posts, Banners, Logos and More</h1>
                         <p className='w-[75.3rem] my-[3.7rem] text-left text-[2.7rem] leading-[3.2rem] font-[500] text-[#222222]'>Great design has the power to transform businesses. Our team of talented designers specialize in creating stunning designs that help our clients stand out in a crowded market.</p>
                         <div className="flex">
-                            <button class="button2">Services</button>
-                            <button class="button3 ml-[2rem]">Portfolio</button>
+                            <button class="button2" onClick={()=>window.location.href="#services"}>Services</button>
+                            <button class="button3 ml-[2rem]" onClick={()=>window.location.href="#portfolio"}>Portfolio</button>
                         </div>
                     </div>
                     <img src={Main} alt="" className='w-[63rem] h-[41.2rem]' />
                 </div>
             </section>
-            <section className="about">
+            <section className="about" id='about'>
                 <h1 className=' text-[6rem] w-[138rem] m-auto leading-[7.2rem] font-[600] text-[#222222]'>We strive to help businesses differentiate themselves from the competition by delivering visually stunning and unique designs that capture the essence of their brand."</h1>
                 <div className='flex mt-[10.8rem] justify-center items-center'>
                     <img src={About} alt="" className='w-[37.3rem] h-[45.6rem]' />
                     <div className='w-[68.1rem] text-left ml-[15.7rem]'>
                         <h2 className='text-[3rem] leading-[3.6rem] font-[600] text-[#222222]'>Creative Passion</h2>
-                        <p className='text-[2rem] my-[1.4rem] leading-[2.6rem] font-[400] text-[#222222]'>At [Company Name], we're passionate about using creativity to transform businesses and capture the essence of each brand. Our team of expert designers focuses on delivering visually stunning, practical, and effective design solutions. We take pride in creating designs that stand out in today's crowded marketplace, whether it's a new logo, website, or marketing campaign. </p>
-                        <h2 className='text-[3rem] leading-[3.6rem] font-[600] text-[#222222]'>Creative Passion</h2>
-                        <p className='mt-[1.4rem] text-[2rem] leading-[2.6rem] font-[400] text-[#222222]'>At [Company Name], we're passionate about using creativity to transform businesses and capture the essence of each brand. Our team of expert designers focuses on delivering visually stunning, practical, and effective design solutions. We take pride in creating designs that stand out in today's crowded marketplace, whether it's a new logo, website, or marketing campaign. </p>
+                        <p className='text-[2rem] my-[1.4rem] leading-[2.6rem] font-[400] text-[#222222]'>At EV Technologies, we're passionate about using creativity to transform businesses and capture the essence of each brand. Our team of expert designers focuses on delivering visually stunning, practical, and effective design solutions. We take pride in creating designs that stand out in today's crowded marketplace, whether it's a new logo, website, or marketing campaign. </p>
+                        <h2 className='text-[3rem] leading-[3.6rem] font-[600] text-[#222222]'>Unwavering Commitment</h2>
+                        <p className='mt-[1.4rem] text-[2rem] leading-[2.6rem] font-[400] text-[#222222]'>At EV Technologies, we are committed to excellence and believe that every client deserves high-quality design solutions. Our team works tirelessly to deliver results that exceed expectations, staying at the forefront of design trends and technologies.
+
+We take a personalized approach to every project, understanding each client's unique needs and goals to create custom design solutions. With innovative and effective design, we are dedicated to helping businesses succeed.</p>
                     </div>
                 </div>
-
-                <marquee scrolldelay="10">
+ 
+                <marquee scrolldelay="10" className="mt-[3rem]">
 
                     <h2 className="uppercase text-[8rem] leading-[8.6rem] font-[600] text-left">CREATIVE.Visual Communication.Aesthetics</h2>
 
@@ -114,7 +117,7 @@ const navbarFunc = ()=>{
             </section>
 
             {/* Services  */}
-            <section className="Services mt-[7rem]">
+            <section className="Services mt-[7rem]" id='services'>
                 <h1 className=' text-[6rem] w-[138rem] m-auto leading-[7.2rem] font-[600] text-[#222222]'>Helping businesses shine with stunning design solutions that captivate audiences and elevate brands.</h1>
                 {/* Poster  */}
                 <div className='flex mt-[13.3rem] flex-row-reverse justify-center items-center'>
@@ -124,7 +127,7 @@ const navbarFunc = ()=>{
                         <p className='text-[2rem] my-[1.4rem] leading-[2.6rem] font-[400] text-[#222222]'>Our team of experienced designers understands the importance of creating customized poster and banner designs that reflect the unique identity of your brand. We work closely with our clients to ensure that every design element, from the color scheme to the font choice, aligns with their brand image and marketing goals.
                             <br />
                             <br />
-                            At [Company Name], we specialize in designing attention-grabbing posters and banners that stand out in a crowded marketplace. Our designs are not only visually stunning but also effective in delivering your brand message to your target audience. Whether you need a poster for a trade show, a banner for an outdoor event, or any other type of promotional material, we have the expertise to deliver exceptional results that help your business succeed.</p>
+                            At EV Technologies, we specialize in designing attention-grabbing posters and banners that stand out in a crowded marketplace. Our designs are not only visually stunning but also effective in delivering your brand message to your target audience. Whether you need a poster for a trade show, a banner for an outdoor event, or any other type of promotional material, we have the expertise to deliver exceptional results that help your business succeed.</p>
                     </div>
                 </div>
                 {/* Social Media Post  */}
@@ -132,7 +135,7 @@ const navbarFunc = ()=>{
                     <img src={Post} alt="" className='w-[37.3rem] h-[52.1rem]' />
                     <div className='w-[68.1rem]  text-left ml-[15.7rem]'>
                         <h2 className='text-[3rem]  leading-[3.6rem] font-[600] text-[#222222]'>Social Media Post Design</h2>
-                        <p className='text-[2rem] my-[1.4rem] leading-[2.6rem] font-[400] text-[#222222]'>Our team at [Company Name] offers customized social media design solutions to help businesses stand out on their social media platforms. Our social media design service is tailored to fit the unique needs of each client, ensuring that their brand message is communicated effectively to their audience.
+                        <p className='text-[2rem] my-[1.4rem] leading-[2.6rem] font-[400] text-[#222222]'>Our team at EV Technologies offers customized social media design solutions to help businesses stand out on their social media platforms. Our social media design service is tailored to fit the unique needs of each client, ensuring that their brand message is communicated effectively to their audience.
                             <br />
                             <br />
                             With the increasing importance of social media for businesses, it's essential to have eye-catching designs that capture the attention of your target audience. Our team specializes in creating social media designs that are not only visually appealing but also highly engaging, resulting in increased user engagement and brand awareness. Whether it's creating social media graphics, banners, or posts, our team has the expertise to deliver outstanding designs that will help businesses to achieve their social media goals.</p>
@@ -143,7 +146,7 @@ const navbarFunc = ()=>{
                     <img src={Card} alt="" className='w-[37.3rem] h-[57rem]' />
                     <div className='w-[68.1rem]  text-left mr-[15.7rem]'>
                         <h2 className='text-[3rem]  leading-[3.6rem] font-[600] text-[#222222]'>Business Card / Visiting Card Design</h2>
-                        <p className='text-[2rem] my-[1.4rem] leading-[2.6rem] font-[400] text-[#222222]'>At [Company Name], we specialize in creating unique and personalized business card designs that perfectly capture the essence of your brand. Our collaborative approach ensures that your business card not only looks great, but also effectively communicates your message to your target audience. We use high-quality materials and state-of-the-art printing techniques to create a visually appealing, durable, and long-lasting business card. Our commitment to exceptional service and delivering results that exceed your expectations is what sets us apart.
+                        <p className='text-[2rem] my-[1.4rem] leading-[2.6rem] font-[400] text-[#222222]'>At EV Technologies, we specialize in creating unique and personalized business card designs that perfectly capture the essence of your brand. Our collaborative approach ensures that your business card not only looks great, but also effectively communicates your message to your target audience. We use high-quality materials and state-of-the-art printing techniques to create a visually appealing, durable, and long-lasting business card. Our commitment to exceptional service and delivering results that exceed your expectations is what sets us apart.
                             <br />
                             <br />
                             In addition to our customized business card design services, we also offer fast and affordable options for those who need a quick and cost-effective solution. Our pre-designed templates allow you to choose from a variety of styles and designs, with the ability to add your own text and logo for a personalized touch.</p>
@@ -153,19 +156,18 @@ const navbarFunc = ()=>{
 
 
             {/* Portfolio  */}
-            <section className="portfolio">
+            <section className="portfolio" id='portfolio'>
                 <div className='flex mt-[13.3rem] justify-center items-center'>
                     <h2 className='font-[700] text-[7rem] text-left leading-[8.2rem] w-[55.4rem]'>Designs That Speak Volumes</h2>
                     <div className='w-[68.1rem]  text-left ml-[15.7rem]'>
                         <p className='text-[2rem]  my-[1.4rem] mb-[3rem] leading-[2.6rem] font-[400] text-[#222222]'>we are passionate about delivering cutting-edge design solutions that help our clients stand out in today's competitive marketplace. Our team of highly skilled designers is dedicated to delivering innovative and professional designs that make an impact. From dynamic logos to engaging social media graphics, our designs are carefully crafted to meet the unique needs of each client. </p>
-                        <button class="button2">Contact</button>
+                        <button class="button2" onClick={()=>window.location.href="#contact"}>Contact Now</button>
 
                     </div>
                 </div>
                 {/* image  */}
-                {/* {
-(window.innerWidth > 768) ? 
-                <div className='flex justify-center mt-[13.7rem]'>
+           
+                <div className=' justify-center mt-[13.7rem] Portfolio1'>
                     <div className='w-[28.4rem] h-[59.2rem] posterdes portdiv'>
                         <div className='w-[100%] h-[100%]'>
                             Poster Design
@@ -206,8 +208,8 @@ const navbarFunc = ()=>{
                     </div>
                     <div>
                     </div>
-                </div> : */}
-                <div className='flex justify-center flex-col w-[59rem] mt-[13.7rem] m-auto'>
+                </div> 
+                <div className='Portfolio2 justify-center flex-col w-[59rem] mt-[13.7rem] m-auto'>
                         <div className='banner1 portdiv w-[59rem] h-[27.9rem]'>
                             <div className='w-[100%] h-[100%]'>
                                 Banner Design 1
@@ -251,11 +253,11 @@ const navbarFunc = ()=>{
                 </div>
                 
 
-</section>
+            </section>
 
 
 
-            <section className="contact">
+            <section className="contact" id='contact'>
                 <div className='flex mt-[13.3rem] justify-center items-center'>
                     <h2 className='font-[700] text-[7rem] text-left leading-[8.2rem] w-[73.6rem]'>Get in Touch with Our Expert Team for Exceptional Service </h2>
                     <div className='  text-left ml-[15.7rem]'>
@@ -275,7 +277,12 @@ const navbarFunc = ()=>{
                                 <label htmlFor="" className='text-[2rem] text-[black] mt-[2.5rem]'>Message</label>
                                 <textarea onChange={(e) => setmsg(e.target.value)} className='text-[1.8rem] mt-[1.5rem] pl-[1.5rem] pt-[1.5rem]' name="" id="" cols="30" rows="10" placeholder='Enter Your Message'></textarea>
                             </div>
-                            <button onClick={(e) => { send(e) }} class="button2 mt-[2.5rem]">Portfolio</button>
+                            { msgReceived ?
+
+                                <div className='w-[100%] h-[5rem] bg-[#CFF4FC] text-[#055160] border-[1px] border-[#055160] mt-[2rem] rounded-[1.5rem] text-[2rem] flex justify-center items-center' >Message Received!</div>
+                            : ""
+                            }
+                            <button onClick={(e) => { send(e) }} class="button2 mt-[2.5rem]">Submit</button>
 
                         </form>
                     </div>
@@ -285,11 +292,11 @@ const navbarFunc = ()=>{
             <footer className='mt-[32.6rem] w-[164rem] m-auto  flex justify-between items-center'>
                 <img src={logo} className='w-[13.4rem] h-[9.5rem]' alt="" />
                 <div>
-                    <a href="" className='text-[2rem] mx-[2rem]'>Home</a>
-                    <a href="" className='text-[2rem] mx-[2rem]'>About</a>
-                    <a href="" className='text-[2rem] mx-[2rem]'>Services</a>
-                    <a href="" className='text-[2rem] mx-[2rem]'>Portfolio</a>
-                    <a href="" className='text-[2rem] mx-[2rem]'>Contact</a>
+                    <a href="#home" className='text-[2rem] mx-[2rem]'>Home</a>
+                    <a href="#about" className='text-[2rem] mx-[2rem]'>About</a>
+                    <a href="#services" className='text-[2rem] mx-[2rem]'>Services</a>
+                    <a href="#portfolio" className='text-[2rem] mx-[2rem]'>Portfolio</a>
+                    <a href="#contact" className='text-[2rem] mx-[2rem]'>Contact</a>
                 </div>
                 <div className='flex socialicons'>
                     <a href=""><img className='w-[6rem] h-[6rem] ' src={Fb} alt="" /></a>
