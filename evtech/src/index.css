@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  background: #e8e8e8;
+}
+.button2 {
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 1.8rem;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: .1rem solid #e8e8e8;
+  box-shadow: .6rem .6rem 1.2rem #c5c5c5,
+             -.6rem -.6rem 1.2rem #ffffff;
+}
+
+.button2:active {
+  color: #666;
+  box-shadow: inset .4rem .4rem 1.2rem #c5c5c5,
+             inset -.4rem -.4rem 1.2rem #ffffff;
+}
+
+.button2:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button2:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #0011ff;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button2:hover {
+  color: #ffffff;
+  border: .1rem solid #0011ff;
+}
+
+.button2:hover:before {
+  top: -35%;
+  background-color: #0011ff;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button2:hover:after {
+  top: -45%;
+  background-color: #0011ff;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+.button3 {
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #fff;
+  padding: 0.7em 1.7em;
+  font-size: 1.8rem;
+  border-radius: 0.5em;
+  background: #0011ff;
+  border: .1rem solid #e8e8e8;
+  box-shadow: .6rem .6rem 1.2rem #c5c5c5,
+             -.6rem -.6rem 1.2rem #ffffff;
+}
+
+.button3:active {
+  color: #666;
+  box-shadow: inset .4rem .4rem 1.2rem #c5c5c5,
+             inset -.4rem -.4rem 1.2rem #ffffff;
+}
+
+.button3:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button3:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #e8e8e8;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button3:hover {
+  color: #666;
+  border: .1rem solid #e8e8e8;
+}
+
+.button3:hover:before {
+  top: -35%;
+  background-color: #e8e8e8;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button3:hover:after {
+  top: -45%;
+  background-color: #e8e8e8;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+
+.marquee{
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.marquee h2{
+  animation: anim 6000ms linear infinite;
+}
+@keyframes anim {
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+  
+}
+
+
+.posterdes{
+  background: url('./img/posterdes.png');
+  background-position: center;
+  background-size: cover;
+}
+.banner1{
+  background: url('./img/bannerdes.png');
+  background-position: center;
+  background-size: cover;
+
+}
+.banner2{
+  background: url('./img/bannerdes2.png');
+  background-position: center;
+  background-size: cover;
+}
+.card1{
+  background: url('./img/card1.png');
+  background-position: center;
+  background-size: cover;
+}
+.card2{
+  background: url('./img/card2.png');
+  background-position: center;
+  background-size: cover;
+}
+.post{
+  background: url('./img/postdes.png');
+  background-position: center;
+  background-size: cover;
+}
+.portdiv {
+  filter: drop-shadow(.7rem .7rem .9rem rgba(0, 0, 0, 0.25));
+}
+.portdiv div{
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+opacity: 0;
+  justify-content: center;
+  align-items: center;
+  background: #0000007d;
+  
+  line-height: 4.5rem;
+transition: all 0.3s ease-in-out ;
+}
+.portdiv:hover div{
+opacity: 1;
+}
+input,
+textarea{
+  border-radius: 1.2rem;
+  background: #eeeeee;
+  box-shadow: .6rem .6rem 1.2rem #c5c5c5, -.6rem -.6rem 1.2rem #ffffff;
+             width: 27.7rem;
+             outline: none;
+             height: 5rem;
+}
+textarea{
+  width: 57.9rem;
+  height: 15rem;
+}
+.socialicons a img{
+  transition: all 0.3s ease-in-out;
+}
+.socialicons a img:hover{
+width: 7rem;
+height: 7rem;
+}
+@media screen and (max-width : 1640px) {
+  html {
+    font-size: 52.5%;
+}
+}
+@media screen and (max-width : 1360px) {
+  html {
+    font-size: 42.5%;
+}
+}
+@media screen and (max-width : 1080px) {
+  html {
+    font-size: 32.5%;
+}
+}
