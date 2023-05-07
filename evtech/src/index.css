@@ -247,7 +247,7 @@ width: 7rem;
 height: 7rem;
 }
 .header2{
-  display: none;
+  display: none !important;
 }
 @media screen and (max-width : 1640px) {
   html {
@@ -268,7 +268,7 @@ height: 7rem;
 @media screen and (max-width : 768px) {
 
 .header1{
-  display: none;
+  display: none !important;
 }
 .header2{
   display: flex;
@@ -292,12 +292,12 @@ top : 0
 
 
 .home {
-  margin-top: 5rem;
-  height: auto;
+  margin-top: 5rem !important;
+  height: auto !important;
   padding-bottom: 10rem;
 }
 .home .w-\[166\.5rem\]{
-  flex-direction: column;
+  flex-direction: column ;
   align-items: center;
   width: 100%;
 }
@@ -377,6 +377,7 @@ top : 0
 footer{
   width: 100% !important;
 padding: 0 3rem;
+margin-top: 5rem !important;
 }
 }
 
