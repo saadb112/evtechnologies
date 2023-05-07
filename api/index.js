@@ -53,8 +53,13 @@ const database = (module.exports = () => {
   `
  }
  sgmail.send(message).then((response)=>{
-console.log("email sent")
+res.send( "asdasd")
  })
+})
+
+
+app.get("/", ()=>{
+  res.send("hello")
 })
 app.listen(port, ()=>{
     console.log("started")

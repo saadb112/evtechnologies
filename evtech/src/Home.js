@@ -18,7 +18,7 @@ const [email, setemail] = useState("")
 const [msg, setmsg] = useState("")
     const send = (e)=>{
         e.preventDefault()
-        axios.post('http://localhost:8000/contact', {
+        axios.post('https://evtechnologies.onrender.com/contact', {
             name,
             email,
             msg
